@@ -1,0 +1,141 @@
+<testsuite name="swag_labs.SeleniumBase scenarios for the Swag Labs App" tests="5" errors="1" failures="0" skipped="0" time="6.498015" timestamp="2023-02-05T12:22:36.124058" hostname="Nates-MacBook-Pro.local"><testcase classname="swag_labs.SeleniumBase scenarios for the Swag Labs App" name="User can log in and log out successfully" status="passed" time="1.542408"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: User can log in and log out successfully
+    Given Open the Swag Labs Login Page ... passed in 1.072s
+    When Login to Swag Labs with standard_user ... passed in 0.248s
+    Then Verify that the current user is logged in ... passed in 0.028s
+    When Logout from Swag Labs ... passed in 0.185s
+    Then Verify on Login page ... passed in 0.009s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="swag_labs.SeleniumBase scenarios for the Swag Labs App" name="User can order a backpack from the store" status="passed" time="1.387247"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: User can order a backpack from the store
+    Given Open the Swag Labs Login Page ... passed in 0.360s
+    When Login to Swag Labs with standard_user ... passed in 0.171s
+    Then Verify that the current user is logged in ... passed in 0.025s
+    And Save price of "Backpack" to <item_price> ... passed in 0.048s
+    When Add "Backpack" to Cart ... passed in 0.042s
+    Then Verify shopping cart badge shows 1 item(s) ... passed in 0.016s
+    When Click on shopping cart icon ... passed in 0.049s
+    And Click Checkout ... passed in 0.043s
+    And Enter checkout info: First, Last, 12345 ... passed in 0.241s
+    And Click Continue ... passed in 0.047s
+    Then Verify 1 "Backpack"(s) in cart ... passed in 0.017s
+    And Verify cost of "Backpack" is <item_price> ... passed in 0.017s
+    And Verify item total is $29.99 ... passed in 0.017s
+    And Verify tax amount is $2.40 ... passed in 0.017s
+    And Verify total cost is $32.39 ... passed in 0.017s
+    When Click Finish ... passed in 0.042s
+    Then Verify order complete ... passed in 0.027s
+    When Logout from Swag Labs ... passed in 0.183s
+    Then Verify on Login page ... passed in 0.008s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="swag_labs.SeleniumBase scenarios for the Swag Labs App" name="User can order two items from the store" status="failed" time="1.918455"><error type="TextNotVisibleException" message="&#10; Expected exact text {Item total: $59.98} for {div.summary_subtotal_label} was not visible after 1 second!&#10; (Actual text was {Item total: $59.980000000000004})">
+<![CDATA[
+Failing step: And Verify item total is $59.98 ... failed in 1.068s
+Location: behave_bdd/features/swag_labs.feature:43
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/behave/model.py", line 1329, in run
+    match.run(runner.context)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/behave/matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "behave_bdd/features/steps/swag_labs.py", line 106, in verify_item_total
+    sb.assert_exact_text(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/seleniumbase/fixtures/base_case.py", line 8684, in assert_exact_text
+    self.wait_for_exact_text_visible(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/seleniumbase/fixtures/base_case.py", line 8551, in wait_for_exact_text_visible
+    return page_actions.wait_for_exact_text_visible(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/seleniumbase/fixtures/page_actions.py", line 700, in wait_for_exact_text_visible
+    timeout_exception(TextNotVisibleException, message)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/seleniumbase/fixtures/page_actions.py", line 228, in timeout_exception
+    raise exc(msg)
+seleniumbase.common.exceptions.TextNotVisibleException: 
+ Expected exact text {Item total: $59.98} for {div.summary_subtotal_label} was not visible after 1 second!
+ (Actual text was {Item total: $59.980000000000004})
+
+Captured stdout:
+>>> STEP FAILED:  (#12) Verify item total is $59.98
+Class / Feature:  SeleniumBase scenarios for the Swag Labs App
+Test / Scenario:  User can order two items from the store]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: User can order two items from the store
+    Given Open the Swag Labs Login Page ... passed in 0.152s
+    When Login to Swag Labs with standard_user ... passed in 0.167s
+    And Add "Bike Light" to Cart ... passed in 0.079s
+    And Add "Fleece Jacket" to Cart ... passed in 0.040s
+    Then Verify shopping cart badge shows 2 item(s) ... passed in 0.015s
+    When Click on shopping cart icon ... passed in 0.047s
+    And Click Checkout ... passed in 0.042s
+    And Enter checkout info: First, Last, 54321 ... passed in 0.227s
+    And Click Continue ... passed in 0.046s
+    Then Verify 1 "Bike Light"(s) in cart ... passed in 0.018s
+    Then Verify 1 "Fleece Jacket"(s) in cart ... passed in 0.017s
+    And Verify item total is $59.98 ... failed in 1.068s
+    And Verify tax amount is $4.80 ... skipped in 0.000s
+    And Verify total cost is $64.78 ... skipped in 0.000s
+    When Click Finish ... skipped in 0.000s
+    Then Verify order complete ... skipped in 0.000s
+    When Logout from Swag Labs ... skipped in 0.000s
+    Then Verify on Login page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+>>> STEP FAILED:  (#12) Verify item total is $59.98
+Class / Feature:  SeleniumBase scenarios for the Swag Labs App
+Test / Scenario:  User can order two items from the store
+
+]]>
+</system-out></testcase><testcase classname="swag_labs.SeleniumBase scenarios for the Swag Labs App" name="User can sort items by name from Z to A" status="passed" time="0.617495"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: User can sort items by name from Z to A
+    Given Open the Swag Labs Login Page ... passed in 0.040s
+    When Login to Swag Labs with standard_user ... passed in 0.170s
+    And Sort items from Z to A ... passed in 0.200s
+    Then Verify "Test.allTheThings() T-Shirt" on top ... passed in 0.019s
+    When Logout from Swag Labs ... passed in 0.181s
+    Then Verify on Login page ... passed in 0.008s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="swag_labs.SeleniumBase scenarios for the Swag Labs App" name="User can add &amp; remove 6 items to/from cart" status="passed" time="1.03241"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: User can add & remove 6 items to/from cart
+    Given Open the Swag Labs Login Page ... passed in 0.147s
+    When Login to Swag Labs with standard_user ... passed in 0.174s
+    And Add "Backpack" to Cart ... passed in 0.050s
+    And Add "Bike Light" to Cart ... passed in 0.039s
+    And Add "Bolt T-Shirt" to Cart ... passed in 0.041s
+    And Add "Fleece Jacket" to Cart ... passed in 0.039s
+    And Add "Onesie" to Cart ... passed in 0.043s
+    And Add "Test.allTheThings() T-Shirt" to Cart ... passed in 0.041s
+    Then Verify shopping cart badge shows 6 item(s) ... passed in 0.016s
+    When Remove "Backpack" from Cart ... passed in 0.041s
+    And Remove "Bike Light" from Cart ... passed in 0.040s
+    And Remove "Bolt T-Shirt" from Cart ... passed in 0.042s
+    And Remove "Fleece Jacket" from Cart ... passed in 0.040s
+    And Remove "Onesie" from Cart ... passed in 0.042s
+    And Remove "Test.allTheThings() T-Shirt" from Cart ... passed in 0.042s
+    Then Verify shopping cart badge is missing ... passed in 0.003s
+    When Logout from Swag Labs ... passed in 0.184s
+    Then Verify on Login page ... passed in 0.008s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

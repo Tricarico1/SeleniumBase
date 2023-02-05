@@ -1,0 +1,21 @@
+<testsuite name="realworld.SeleniumBase scenarios for the RealWorld App" tests="1" errors="0" failures="0" skipped="0" time="3.840805" timestamp="2023-02-05T12:22:29.360295" hostname="Nates-MacBook-Pro.local"><testcase classname="realworld.SeleniumBase scenarios for the RealWorld App" name="Verify RealWorld App (log in / sign out)" status="passed" time="3.840805"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Verify RealWorld App (log in / sign out)
+    Given Open "seleniumbase.io/realworld/login" ... passed in 1.154s
+    And Clear Session Storage ... passed in 0.005s
+    When Type "demo_user" into "#username" ... passed in 0.148s
+    And Type "secret_pass" into "#password" ... passed in 0.088s
+    And Do MFA "GAXG2MTEOR3DMMDG" into "#totpcode" ... passed in 0.508s
+    Then Assert exact text "Welcome!" in "h1" ... passed in 0.020s
+    And Highlight "img#image1" ... passed in 0.491s
+    And Click 'a:contains("This Page")' ... passed in 0.060s
+    And Save screenshot to logs ... passed in 0.934s
+    When Click link "Sign out" ... passed in 0.405s
+    Then Assert element 'a:contains("Sign in")' ... passed in 0.010s
+    And Assert text "You have been signed out!" ... passed in 0.019s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

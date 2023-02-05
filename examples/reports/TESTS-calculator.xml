@@ -1,0 +1,147 @@
+<testsuite name="calculator.SeleniumBase scenarios for the Calculator App" tests="9" errors="0" failures="0" skipped="0" time="5.831912" timestamp="2023-02-05T12:22:24.663347" hostname="Nates-MacBook-Pro.local"><testcase classname="calculator.SeleniumBase scenarios for the Calculator App" name="Pressing &quot;C&quot; outputs &quot;0&quot;" status="passed" time="1.646778"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Pressing "C" outputs "0"
+    Given Open the Calculator App ... passed in 1.513s
+    When Press C ... passed in 0.119s
+    Then Verify output is "0" ... passed in 0.014s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="calculator.SeleniumBase scenarios for the Calculator App" name="1 + 2 + 3 + 4 + 5 = 15" status="passed" time="0.574685"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: 1 + 2 + 3 + 4 + 5 = 15
+    Given Open the Calculator App ... passed in 0.141s
+    When Press C ... passed in 0.038s
+    And Press 1 ... passed in 0.041s
+    And Press + ... passed in 0.040s
+    And Press 2 ... passed in 0.039s
+    And Press + ... passed in 0.031s
+    And Press 3 ... passed in 0.040s
+    And Press + ... passed in 0.033s
+    And Press 4 ... passed in 0.039s
+    And Press + ... passed in 0.032s
+    And Press 5 ... passed in 0.039s
+    Then Verify output is "1+2+3+4+5" ... passed in 0.011s
+    When Press = ... passed in 0.042s
+    Then Verify output is "15" ... passed in 0.010s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="calculator.SeleniumBase scenarios for the Calculator App" name="6 × 7 × 8 × 9 = 3024" status="passed" time="0.511149"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: 6 × 7 × 8 × 9 = 3024
+    Given Open the Calculator App ... passed in 0.140s
+    When Press C ... passed in 0.039s
+    And Press 6 ... passed in 0.049s
+    And Press × ... passed in 0.039s
+    And Press 7 ... passed in 0.040s
+    And Press × ... passed in 0.031s
+    And Press 8 ... passed in 0.041s
+    And Press × ... passed in 0.033s
+    And Press 9 ... passed in 0.039s
+    Then Verify output is "6×7×8×9" ... passed in 0.012s
+    When Press = ... passed in 0.037s
+    Then Verify output is "3024" ... passed in 0.010s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="calculator.SeleniumBase scenarios for the Calculator App" name="44 - 11 = 33" status="passed" time="0.416815"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: 44 - 11 = 33
+    Given Open the Calculator App ... passed in 0.138s
+    When Press C ... passed in 0.038s
+    And Press 4 ... passed in 0.037s
+    And Press 4 ... passed in 0.033s
+    And Press - ... passed in 0.039s
+    And Press 1 ... passed in 0.039s
+    And Press 1 ... passed in 0.031s
+    Then Verify output is "44-11" ... passed in 0.011s
+    When Press = ... passed in 0.040s
+    Then Verify output is "33" ... passed in 0.010s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="calculator.SeleniumBase scenarios for the Calculator App" name="7.0 × (3 + 3) = 42" status="passed" time="0.588054"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: 7.0 × (3 + 3) = 42
+    Given Open the Calculator App ... passed in 0.140s
+    When Press C ... passed in 0.039s
+    And Press 7 ... passed in 0.040s
+    And Press . ... passed in 0.043s
+    And Press 0 ... passed in 0.040s
+    And Press × ... passed in 0.041s
+    And Press ( ... passed in 0.039s
+    And Press 3 ... passed in 0.039s
+    And Press + ... passed in 0.039s
+    And Press 3 ... passed in 0.032s
+    And Press ) ... passed in 0.040s
+    Then Verify output is "7.0×(3+3)" ... passed in 0.011s
+    When Press = ... passed in 0.038s
+    Then Verify output is "42" ... passed in 0.009s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="calculator.SeleniumBase scenarios for the Calculator App" name="4.5 × 68 = 306" status="passed" time="0.450418"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: 4.5 × 68 = 306
+    Given Open the Calculator App ... passed in 0.144s
+    When Press C ... passed in 0.044s
+    And Evaluate [4.5 × 68] ... passed in 0.251s
+    Then Verify output is "306" ... passed in 0.011s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="calculator.SeleniumBase scenarios for the Calculator App" name="1948 ÷ 4 = 487 -- @1.1 " status="passed" time="0.45018"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: 1948 ÷ 4 = 487 -- @1.1 
+    Given Open the Calculator App ... passed in 0.137s
+    When Press C ... passed in 0.039s
+    And Press [1948] ... passed in 0.148s
+    And Press ÷ ... passed in 0.044s
+    And Press [4] ... passed in 0.033s
+    And Press = ... passed in 0.038s
+    Then Verify output is "487" ... passed in 0.011s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="calculator.SeleniumBase scenarios for the Calculator App" name="21 ÷ 0 = Error -- @1.2 " status="passed" time="0.409186"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: 21 ÷ 0 = Error -- @1.2 
+    Given Open the Calculator App ... passed in 0.163s
+    When Press C ... passed in 0.044s
+    And Press [21] ... passed in 0.076s
+    And Press ÷ ... passed in 0.039s
+    And Press [0] ... passed in 0.038s
+    And Press = ... passed in 0.038s
+    Then Verify output is "Error" ... passed in 0.011s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="calculator.SeleniumBase scenarios for the Calculator App" name="Save calculator screenshot to logs" status="passed" time="0.784646"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Save calculator screenshot to logs
+    Given Open the Calculator App ... passed in 0.139s
+    Given Press [1337] ... passed in 0.147s
+    Given Save calculator screenshot to logs ... passed in 0.499s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

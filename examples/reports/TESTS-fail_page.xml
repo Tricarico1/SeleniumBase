@@ -1,0 +1,26 @@
+<testsuite name="fail_page.SeleniumBase scenarios for the Fail Page" tests="1" errors="0" failures="1" skipped="0" time="0.455827" timestamp="2023-02-05T12:22:25.505688" hostname="Nates-MacBook-Pro.local"><testcase classname="fail_page.SeleniumBase scenarios for the Fail Page" name="Fail test on purpose to see what happens" status="failed" time="0.455827"><failure type="AssertionError" message="This test fails on purpose!">
+<![CDATA[
+Failing step: Then Fail test on purpose ... failed in 0.000s
+Location: behave_bdd/features/fail_page.feature:5
+Assertion Failed: This test fails on purpose!
+Captured stdout:
+>>> STEP FAILED:  (#2) Fail test on purpose
+Class / Feature:  SeleniumBase scenarios for the Fail Page
+Test / Scenario:  Fail test on purpose to see what happens]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Fail test on purpose to see what happens
+    When Open the Fail Page ... passed in 0.456s
+    Then Fail test on purpose ... failed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+>>> STEP FAILED:  (#2) Fail test on purpose
+Class / Feature:  SeleniumBase scenarios for the Fail Page
+Test / Scenario:  Fail test on purpose to see what happens
+
+]]>
+</system-out></testcase></testsuite>
